@@ -1,2 +1,2 @@
-mod network;
-pub use network::*;
+mod frame;
+pub use frame::FrameCoder;
