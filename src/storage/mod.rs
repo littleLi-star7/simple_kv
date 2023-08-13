@@ -109,7 +109,6 @@ mod tests {
         let v1 = store.get("t1", "hello");
         assert_eq!(v1.unwrap(), Some("world1".into()));
 
-
         // get 不存在的 key 或者 table 会得到 None
         assert_eq!(None, store.get("t1", "hello1").unwrap());
         assert!(store.get("t2", "hello1").unwrap().is_none());

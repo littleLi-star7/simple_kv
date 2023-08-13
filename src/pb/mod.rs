@@ -258,7 +258,7 @@ impl TryFrom<&[u8]> for Value {
     }
 }
 
-impl<const N: usize> From<&[u8; N]> for Value  {
+impl<const N: usize> From<&[u8; N]> for Value {
     fn from(buf: &[u8; N]) -> Self {
         Bytes::copy_from_slice(buf).into()
     }
