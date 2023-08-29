@@ -18,11 +18,9 @@ async fn main() -> Result<()> {
         AsyncProstStream::<_, CommandResponse, CommandRequest, _>::from(stream).for_async();
 
     // 生成一个 HSET 命令
-    // let cmd = CommandRequest::new_hset("table1", "hello", "world".to_string().into());
+    let cmd = CommandRequest::new_hset("table1", "hello", "world".to_string().into());
 
     // 发送 HSET 命令
-
-    let cmd = CommandRequest::new_hget("table1", "hello");
     client.send(cmd).await?;
     if let Some(Ok(data)) = client.next().await {
         info!("Got response {:?}", data);
